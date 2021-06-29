@@ -21,9 +21,15 @@ class CommandsValidator {
                         return false
                     }
                 }
-            }
 
-            return true
+                return true
+            }
+        }
+
+        if(inputs[0] == Commands.CHANGE)  {
+            if(inputs.size() == 2 && inputs[1].isNumber())  {
+                return true
+            }
         }
 
         false

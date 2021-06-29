@@ -22,22 +22,23 @@ class RocketmilesApplication implements CommandLineRunner {
 				cashRepository: cashRepository
 		)
 
+		System.out.println("ready")
 		Scanner scanner = new Scanner(System.in)
-		while (scanner.hasNext())	{
-			String input = scanner.next()
+		while (scanner.hasNextLine())	{
+			String input = scanner.nextLine()
 
 			if(CommandsValidator.isValid(input))	{
 				String[] inputs = input.split()
 
 				if(inputs[0] == Commands.EXIT)	break
 
-				processor.process(inputs)
+				System.out.println(processor.process(inputs))
 			} else {
 				System.out.println("Invalid Command")
 			}
 		}
 
-		System.out.println("Bye!")
+		System.out.println("Bye")
 		System.exit(0)
 	}
 }
