@@ -1,5 +1,6 @@
 package com.nakib.rocketmiles
 
+import com.nakib.rocketmiles.constants.Commands
 import com.nakib.rocketmiles.repositories.CashRepository
 import com.nakib.rocketmiles.service.CommandsProcessor
 import com.nakib.rocketmiles.validators.CommandsValidator
@@ -26,10 +27,17 @@ class RocketmilesApplication implements CommandLineRunner {
 			String input = scanner.next()
 
 			if(CommandsValidator.isValid(input))	{
-				processor.process(input.split())
+				String[] inputs = input.split()
+
+				if(inputs[0] == Commands.EXIT)	break
+
+				processor.process(inputs)
 			} else {
 				System.out.println("Invalid Command")
 			}
 		}
+
+		System.out.println("Bye!")
+		System.exit(0)
 	}
 }
