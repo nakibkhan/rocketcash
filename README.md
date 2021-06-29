@@ -6,7 +6,7 @@ Groovy Application for Cash Register
 ./gradlew test 
 ```
 
-## Running Tests
+## Running Build
 ```bash
 ./gradlew build 
 ```
