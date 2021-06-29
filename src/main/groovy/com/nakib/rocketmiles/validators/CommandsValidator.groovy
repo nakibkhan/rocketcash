@@ -5,7 +5,10 @@ import com.nakib.rocketmiles.constants.Commands
 class CommandsValidator {
 
     static boolean isValid(String input)   {
+        if(!input) return false
+
         String [] inputs = input.split()
+
         if(inputs[0] == Commands.EXIT)  {
             return true
         }

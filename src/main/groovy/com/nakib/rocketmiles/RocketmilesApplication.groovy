@@ -17,9 +17,8 @@ class RocketmilesApplication implements CommandLineRunner {
 
 	@Override
 	void run(String... args) throws Exception {
-		CashRepository cashRepository = new CashRepository()
 		CommandsProcessor processor = new CommandsProcessor(
-				cashRepository: cashRepository
+				cashRepository: new CashRepository()
 		)
 
 		System.out.println("ready")

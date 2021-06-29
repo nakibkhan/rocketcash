@@ -5,6 +5,11 @@ import org.junit.jupiter.api.Test;
 
 class CommandsValidatorTest {
     @Test
+    void isEmpty()  {
+        Assertions.assertFalse(CommandsValidator.isValid(""));
+    }
+
+    @Test
     void isValid_exit() {
         Assertions.assertTrue(CommandsValidator.isValid("quit"));
         Assertions.assertTrue(CommandsValidator.isValid("quit 65fdsafadsfa"));
