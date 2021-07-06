@@ -1,7 +1,9 @@
 package com.nakib.rocketmiles.repositories
 
 import com.nakib.rocketmiles.constants.Bill
+import org.springframework.stereotype.Component
 
+@Component
 class CashRepository {
     private final HashMap<Bill, Integer> cash = [:]
 

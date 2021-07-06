@@ -3,9 +3,12 @@ package com.nakib.rocketmiles.service
 import com.nakib.rocketmiles.constants.Bill
 import com.nakib.rocketmiles.constants.Commands
 import com.nakib.rocketmiles.repositories.CashRepository
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Component
 
+@Component
 class CommandsProcessor {
-    CashRepository cashRepository
+    @Autowired CashRepository cashRepository
 
     String process(String[] args) {
 
